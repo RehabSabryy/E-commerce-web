@@ -1,0 +1,79 @@
+#container {
+  background-color: #064e40;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: initial;
+  color: burlywood;
+  font-size: 30px;
+  word-break: break-all;
+}
+mat-toolbar {
+  background-color: #064e40;
+  color: burlywood;
+  font-size: 30px;
+  text-align: center;
+  padding: 25px 25px 25px 100px;
+  font-family: -webkit-body;
+  place-content: center;
+  margin-left: 40px;
+}
+a {
+  margin-block: auto;
+  padding-right: 40px;
+}
+.icon {
+  color: burlywood;
+  place-self: flex-end;
+  margin-right: auto;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  display: flex;
+  justify-content: flex-end;
+}
+#webName {
+  padding: 70px 0 70px 70px;
+  text-align: center;
+  font-size: 70px;
+  color: #064e40;
+  font-family: fantasy;
+}
+.center {
+  display: flex;
+  justify-content: center;
+}
+mat-icon {
+  align-self: center;
+  margin-top: 70px;
+  font-size: 50px;
+  height: 50px;
+  width: 50px;
+  color: #064e40;
+}
+.btn-warning {
+  background-color: burlywood;
+  color: #064e40;
+}
+.loginButton {
+  background-color: #064e40;
+  color: burlywood !important;
+  height: 50px;
+  text-align: center;
+  padding-top: 10px;
+}
+.signupButton {
+  background-color: #064e40;
+  color: burlywood !important;
+  height: 50px;
+  text-align: center;
+  padding-top: 10px;
+  width: 100px;
+}
+.loginButton:hover {
+  background-color: #064e40;
+}

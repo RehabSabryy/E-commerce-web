@@ -1,0 +1,88 @@
+<div class="form">
+  <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+    <div class="title">Welcome</div>
+    <div class="subtitle">Let's create your account!</div>
+
+    <label for="firstName">First Name:</label>
+    <input
+      id="firstName"
+      type="text"
+      formControlName="firstName"
+      placeholder="Enter your first name"
+      class="form-control"
+    />
+    <label for="LastName">Last Name</label>
+    <input
+      id="lastName"
+      type="text"
+      placeholder="Enter your last name"
+      formControlName="lastName"
+      class="form-control"
+    />
+
+    <label for="email"> e-mail:</label>
+    <input
+      id="email"
+      type="text"
+      formControlName="email"
+      placeholder="Email"
+      class="form-control"
+    />
+
+    <label for="password">Password</label>
+    <input
+      id="password"
+      type="text"
+      formControlName="password"
+      placeholder="Password"
+      class="form-control"
+    />
+
+    <label for="reEnterPassword"> Re-enter Password</label>
+    <input
+      id="password2"
+      type="text"
+      formControlName="reEnterPassword"
+      placeholder="Please re-enter your password :)"
+      class="form-control"
+    />
+    <div formGroupName="address">
+      <h2>Address</h2>
+
+      <label for="street">Street: </label>
+      <input
+        id="street"
+        type="text"
+        formControlName="street"
+        class="form-control"
+        placeholder="1234 Main St"
+      />
+
+      <label for="city">City: </label>
+      <input
+        id="city"
+        type="text"
+        formControlName="city"
+        class="form-control"
+      />
+
+      <label for="state">State: </label>
+      <input
+        id="state"
+        type="text"
+        formControlName="state"
+        class="form-control"
+      />
+
+      <label for="zip">Zip Code: </label>
+      <input id="zip" type="text" formControlName="zip" class="form-control" />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!signUpForm.valid"
+    >
+      Submit
+    </button>
+  </form>
+</div>

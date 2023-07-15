@@ -1,0 +1,20 @@
+<div
+  id="container"
+  *ngIf="currentRoute !== '/notFound' && '/login' && '/signup' && '/contact'"
+>
+  <mat-toolbar
+    class="max-w-7x1 mx-auto border-x"
+    *ngIf="currentRoute !== '/login'"
+    ><p>Free Shipping on all orders above EGP700</p>
+    <button mat-button class="cart" (click)="myCart()">
+      <mat-icon class="icon">shopping_cart</mat-icon> My Cart
+    </button>
+  </mat-toolbar>
+  <button mat-button class="loginButton" (click)="login()">Login</button>
+  <button mat-button class="signupButton" (click)="signUp()">SignUp</button>
+</div>
+
+<div class="center">
+  <div id="webName" *ngIf="currentRoute !== '/notFound'">Shopify</div>
+  <mat-icon *ngIf="currentRoute !== '/notFound'">shopping_cart</mat-icon>
+</div>

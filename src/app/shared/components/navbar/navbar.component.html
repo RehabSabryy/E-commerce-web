@@ -1,0 +1,9 @@
+<ul *ngIf="currentRoute !== '/notFound' && '/login' && '/contact'">
+  <li><a routerLink="/products">Home</a></li>
+  <li><a routerLink="/products">Contact Us</a></li>
+  <li><a routerLink="">Women</a></li>
+  <li><a routerLink="">Men</a></li>
+  <li><a routerLink="">Kids</a></li>
+  <li><a routerLink="/cart">My cart</a></li>
+</ul>
+<img src="assets/banner.jpg" *ngIf="currentRoute === '/products'" />

@@ -1,0 +1,37 @@
+img {
+  width: 120px;
+  height: 120px;
+}
+.eachProd {
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  height: 400px;
+  margin-bottom: 20px;
+  text-align: center;
+  padding-top: 30px;
+}
+.eachProd:hover {
+  box-shadow: 0 0 20px rgba(33, 33, 33, 0.2);
+}
+.btns {
+  padding-top: 25px;
+  display: flex;
+  justify-content: space-around;
+}
+h1 {
+  border-bottom-style: groove;
+  height: 130px;
+}
+.price {
+  font-size: 20px;
+}
+.btn-primary {
+  background-color: #064e40;
+  color: burlywood;
+}
+.btn-primary:hover {
+  background-color: rgb(188, 60, 13);
+  color: burlywood;
+}

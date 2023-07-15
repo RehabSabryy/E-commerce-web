@@ -1,0 +1,9 @@
+mat-card {
+  display: flex;
+  flex-direction: row;
+  width: 1296px;
+  justify-content: space-between;
+}
+.categoryContainer {
+  padding-left: 100px;
+}

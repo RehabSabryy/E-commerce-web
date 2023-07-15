@@ -1,0 +1,29 @@
+<div class="categoryContainer">
+  <mat-card>
+    <button mat-button [matMenuTriggerFor]="menu" class="categories">
+      Categories <mat-icon>expand_more</mat-icon>
+    </button>
+    <span>
+      <mat-icon>view_list</mat-icon>
+      <mat-icon>view_module</mat-icon>
+      <mat-icon>view_comfy</mat-icon></span
+    >
+    <mat-menu (change)="filterCategory($event)" #menu="matMenu">
+      <button value="all" mat-menu-item>All</button>
+
+      <button *ngFor="let category of categories" mat-menu-item>
+        {{ category }}
+      </button>
+    </mat-menu>
+  </mat-card>
+</div>
+<div class="container">
+  <div class="row">
+    <div *ngFor="let product of products" class="col-md-4">
+      <app-product [product]="product"></app-product>
+    </div>
+  </div>
+  <div class="text-center w-100">
+    <!-- <app-spinner></app-spinner> -->
+  </div>
+</div>

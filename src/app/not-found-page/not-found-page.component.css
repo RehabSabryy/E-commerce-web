@@ -1,0 +1,29 @@
+.msg {
+  text-align: left;
+  font-family: monospace;
+  font-size: 30px;
+  position: absolute;
+  margin-top: 60px;
+  margin-left: 40px;
+  top: 45%;
+  width: 60%;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(88, 4, 4);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+body {
+  background: burlywood;
+}
+h1 {
+  padding-left: 45px;
+}
+img {
+  margin-left: 800px;
+  width: 400px;
+}
