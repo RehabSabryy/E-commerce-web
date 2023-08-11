@@ -1,9 +1,23 @@
-<ul *ngIf="currentRoute !== '/notFound' && '/login' && '/contact'">
-  <li><a routerLink="/products">Home</a></li>
-  <li><a routerLink="/products">Contact Us</a></li>
-  <li><a routerLink="">Women</a></li>
-  <li><a routerLink="">Men</a></li>
-  <li><a routerLink="">Kids</a></li>
-  <li><a routerLink="/cart">My cart</a></li>
-</ul>
+<nav
+  class="navbar navbar-expand-lg"
+  *ngIf="currentRoute !== '/notFound' && '/login' && '/contact'"
+>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/products">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/contact">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/cart">My Cart</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 <img src="assets/banner.jpg" *ngIf="currentRoute === '/products'" />

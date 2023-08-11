@@ -1,15 +1,13 @@
-ul {
-  overflow: hidden;
+nav {
   background-color: #064e40;
-
-  margin-bottom: 0px;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
 }
-
 li {
   float: left;
+}
+.navbar-collapse {
+  justify-content: center;
 }
 
 li a {
@@ -19,6 +17,7 @@ li a {
   text-align: center;
   padding: 10px 20px;
   text-decoration: none;
+  margin: 0 25px 0 25px;
 }
 
 li a:hover {

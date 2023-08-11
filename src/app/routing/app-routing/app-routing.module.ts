@@ -8,6 +8,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './../../usersAccount/login/login.component';
 import { SignUpComponent } from './../../usersAccount/sign-up/sign-up.component';
+import { AboutComponent } from 'src/app/components/about/about.component';
 
 const appRoutes: Routes = [
   { path: 'products', component: AllProductsComponent },
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'about', component: AboutComponent },
   { path: 'notFound', component: NotFoundPageComponent },
   { path: '**', redirectTo: 'notFound', pathMatch: 'full' },
 ];

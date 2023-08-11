@@ -10,9 +10,10 @@ import { AppRoutingModule } from './routing/app-routing/app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { AccountModule } from './usersAccount/account.module';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
-  declarations: [AppComponent, NotFoundPageComponent],
+  declarations: [AppComponent, NotFoundPageComponent, AboutComponent],
   imports: [
     SharedModule,
     BrowserModule,

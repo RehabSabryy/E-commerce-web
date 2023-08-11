@@ -1,0 +1,65 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 50px;
+  max-width: -webkit-fill-available;
+}
+.contact {
+  margin-bottom: 30px;
+}
+p,
+h1 {
+  color: #064e40;
+  font-weight: bold;
+}
+hr {
+  color: #064e40;
+}
+form {
+  width: 70%;
+}
+
+label {
+  font-weight: bold;
+  width: 170px;
+  color: #064e40;
+}
+
+input,
+textarea {
+  width: 65%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+.input {
+  display: flex;
+}
+
+textarea {
+  height: 100px;
+}
+
+select {
+  width: 50%;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+#remember_me {
+  width: fit-content !important;
+}
+#rememberMe {
+  margin: 15px 0 15px 170px;
+}
+.btn-primary {
+  margin-left: 170px;
+  width: 120px;
+  background-color: #064e40;
+  color: white;
+}
+.btn-primary :hover,
+.btn-primary :focus {
+  background-color: sandybrown;
+  color: #064e40;
+}
