@@ -1,15 +1,9 @@
 nav {
   background-color: #064e40;
-  display: flex;
-  flex-wrap: wrap;
 }
 li {
   float: left;
 }
-.navbar-collapse {
-  justify-content: center;
-}
-
 li a {
   display: block;
   color: burlywood;
@@ -24,9 +18,6 @@ li a:hover {
   background-color: rgb(188, 60, 13);
   color: white;
 }
-/* img {
-    padding-left: 250px;
-  } */
 img {
   width: -webkit-fill-available;
 }

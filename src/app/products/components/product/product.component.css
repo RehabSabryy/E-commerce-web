@@ -2,7 +2,7 @@ img {
   width: 120px;
   height: 120px;
 }
-.eachProd {
+.each-product {
   margin-top: 20px;
   border-radius: 5px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -12,7 +12,7 @@ img {
   text-align: center;
   padding-top: 30px;
 }
-.eachProd:hover {
+.each-product:hover {
   box-shadow: 0 0 20px rgba(33, 33, 33, 0.2);
 }
 .btns {

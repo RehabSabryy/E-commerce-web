@@ -11,8 +11,8 @@ import { SignUpComponent } from './../../usersAccount/sign-up/sign-up.component'
 import { AboutComponent } from 'src/app/components/about/about.component';
 
 const appRoutes: Routes = [
-  { path: 'products', component: AllProductsComponent },
   { path: '', redirectTo: 'products', pathMatch: 'full' },
+  { path: 'products', component: AllProductsComponent },
   { path: 'details/:id', component: ProductsDetailsComponent },
   { path: 'cart', component: CartComponent },
   { path: 'login', component: LoginComponent },
