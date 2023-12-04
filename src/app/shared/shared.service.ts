@@ -7,6 +7,7 @@ import { Injectable } from '@angular/core';
 export class SharedService {
   private allProducts: iProduct[] = [];
   private productsToCart: iProduct[] = [];
+  private categories: string[] = [];
 
   constructor() {}
   public findProduct(id: number): iProduct | undefined {
@@ -17,6 +18,12 @@ export class SharedService {
   }
   public setAllProducts(arr: iProduct[]) {
     this.allProducts = arr;
+  }
+  public getCategories() {
+    return this.categories;
+  }
+  public setAllCategories(arr: string[]) {
+    this.categories = arr;
   }
   public addProductToCart(product: iProduct) {
     const found: boolean = this.productsToCart.includes(product);

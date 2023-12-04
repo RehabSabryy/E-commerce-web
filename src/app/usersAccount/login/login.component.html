@@ -1,5 +1,5 @@
 <div class="form">
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
     <div class="form-group">
       <div class="title">Welcome</div>
       <div>
@@ -16,17 +16,27 @@
         <small id="emailHelp" class="form-text text-muted"
           >We'll never share your email with anyone else.</small
         >
+        <span
+        class="loginValidation"
+        *ngIf="loginForm.controls['email'].touched &&  loginForm.controls['email'].errors?.['required']"
+        >*Email is required!</span
+      >
       </div>
 
       <div>
         <label for="password">Password:</label>
         <input
           id="password"
-          type="text"
+          type="password"
           placeholder="Password"
           formControlName="password"
           class="form-control"
         />
+        <span
+        class="loginValidation"
+        *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].errors?.['required']"
+        >*Password is required!</span
+      >
       </div>
       <div class="form-check mb-3">
         <input
@@ -41,7 +51,7 @@
       </div>
 
       <div class="d-grid">
-        <button
+        <button  (click)="goToHome()"
           class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2"
           type="submit"
         >

@@ -33,7 +33,7 @@
                   <div class="d-flex flex-row">
                     <button
                       class="btn btn-link px-2"
-                      onclick="this.parentNode.querySelector('input[type=number]').stepDown()"
+                      (click)="decrementItemCount(productToCart, 1)"
                     >
                       <i class="fas fa-minus"></i>
                     </button>
@@ -42,15 +42,16 @@
                       id="form1"
                       min="0"
                       name="quantity"
-                      value="1"
+                      [value]="productToCart.quantity || 1"
                       type="number"
                       class="form-control form-control-sm"
                       style="width: 50px"
+                      
                     />
 
                     <button
                       class="btn btn-link px-2"
-                      onclick="this.parentNode.querySelector('input[type=number]').stepUp()"
+                      (click)="incrementItemCount(productToCart, 1)"
                     >
                       <i class="fas fa-plus"></i>
                     </button>
@@ -59,7 +60,7 @@
                 <td class="align-middle border-bottom-0">
                   <p class="mb-0" style="font-weight: 500">
                     <!-- ------------ -->
-                    {{ productToCart?.price }}
+                    {{ (productToCart?.price || 0) * (productToCart?.quantity || 1) }}
                   </p>
                 </td>
               </tr>
@@ -201,7 +202,7 @@
                   style="font-weight: 500"
                 >
                   <p class="mb-2">Subtotal</p>
-                  <p class="mb-2">{{ subtotal }}</p>
+                  <p class="mb-2">{{ subtotal.toFixed(2) }}</p>
                 </div>
 
                 <div
@@ -219,13 +220,13 @@
                   style="font-weight: 500"
                 >
                   <p class="mb-2">Total (tax included)</p>
-                  <p class="mb-2">{{ subtotal + shipping }}</p>
+                  <p class="mb-2">{{ +subtotal.toFixed(2) + + shipping }}</p>
                 </div>
 
                 <button type="button" class="btn btn-primary btn-block btn-lg">
                   <div class="d-flex justify-content-between">
                     <span>Checkout</span>
-                    <span>{{ subtotal + shipping }}</span>
+                    <span>{{ +subtotal.toFixed(2) + +shipping }}</span>
                   </div>
                 </button>
               </div>

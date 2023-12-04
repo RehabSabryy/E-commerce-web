@@ -8,9 +8,9 @@ import { CartsModule } from '../carts/carts.module';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { SpinnerComponent } from './components/spinner/spinner.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatBadgeModule } from '@angular/material/badge';
+
 import {
   NgbPaginationModule,
   NgbAlertModule,
@@ -30,18 +30,17 @@ import { ContactComponent } from '../contact/contact/contact.component';
     NgbAlertModule,
     MatToolbarModule,
     MatBadgeModule,
+    
   ],
   declarations: [
     HeaderComponent,
     NavbarComponent,
-    SpinnerComponent,
     FooterComponent,
     ContactComponent,
   ],
   exports: [
     HeaderComponent,
     NavbarComponent,
-    SpinnerComponent,
     FooterComponent,
     ContactComponent,
   ],

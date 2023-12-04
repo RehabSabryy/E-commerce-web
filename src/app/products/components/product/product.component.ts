@@ -1,7 +1,6 @@
 import { iProduct } from './../../product.model';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { outputAst } from '@angular/compiler';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({

@@ -1,8 +1,9 @@
+<div class="container-fluid d-flex justify-content-center flex-column p-0">
 <div
-  class="container-fluid d-flex flex-row justify-content-center"
+  class="containerr d-flex justify-content-center "
   *ngIf="currentRoute !== '/notFound' && '/login' && '/signup' && '/contact'"
->
-  <mat-toolbar
+> 
+  <mat-toolbar 
     class="max-w-7x1 mx-auto border-x"
     *ngIf="currentRoute !== '/login'"
     ><p class="d-flex justify-content-center">
@@ -11,12 +12,19 @@
     <button mat-button class="cart" (click)="myCart()">
       <mat-icon class="icon">shopping_cart</mat-icon> My Cart
     </button>
+  
+    <button class="auth" >
+    <button mat-button class="login-button" *ngIf="!isLoggedIn" (click)="login()">Login</button>
+  <button mat-button class="signup-button" *ngIf="!isSignedUp" (click)="signUp()">SignUp</button>
+  <button mat-button class="signup-button" *ngIf="isSignedUp && isLoggedIn" (click)="logout()">Logout</button>
+
+</button>
   </mat-toolbar>
-  <button mat-button class="login-button" (click)="login()">Login</button>
-  <button mat-button class="signup-button" (click)="signUp()">SignUp</button>
+  
 </div>
 
 <div class="center d-flex justify-content-center">
   <div id="web-name" *ngIf="currentRoute !== '/notFound'">Shopia</div>
   <mat-icon *ngIf="currentRoute !== '/notFound'">shopping_cart</mat-icon>
+</div>
 </div>

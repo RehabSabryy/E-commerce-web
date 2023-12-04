@@ -1,19 +1,31 @@
-.container-fluid {
+@media (max-width: 768px) {
+ .container-fluid{
+    margin: 0;
+    padding: 0;
+ }
+
+}
+.containerr{
+  padding: 18px 0;
+
+}
+.containerr,mat-toolbar {
   background-color: #064e40;
-  flex-wrap: initial;
   color: burlywood;
-  font-size: 30px;
-  word-break: break-all;
+  font-size: 1.875rem;
+  flex-wrap: wrap;
+  flex-direction: row;
+  
+
+} 
+.auth{
+  border-style: hidden;
+  background-color: #064e40;
 }
 mat-toolbar {
-  background-color: #064e40;
-  color: burlywood;
-  font-size: 30px;
-  text-align: center;
-  padding: 25px 25px 25px 100px;
   font-family: -webkit-body;
   place-content: center;
-  margin-left: 40px;
+
 }
 a {
   margin-block: auto;
@@ -24,14 +36,11 @@ a {
   place-self: flex-end;
   margin-right: auto;
 }
-.btn {
-  display: flex;
-  justify-content: flex-end;
-}
+
 #web-name {
   padding: 70px 0 70px 70px;
-  text-align: center;
-  font-size: 70px;
+  
+  font-size: 4.375rem;
   color: #064e40;
   font-family: fantasy;
 }
@@ -43,6 +52,8 @@ mat-icon {
   height: 50px;
   width: 50px;
   color: #064e40;
+  display: flex;
+  flex-wrap: wrap;
 }
 .btn-warning {
   background-color: burlywood;
@@ -52,13 +63,11 @@ mat-icon {
 .signup-button {
   background-color: #064e40;
   color: burlywood !important;
-  height: 50px;
+  height: 3.125rem;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 0.625rem;
 }
-.signup-button {
-  width: 100px;
-}
+
 .login-button:hover {
   background-color: #064e40;
 }

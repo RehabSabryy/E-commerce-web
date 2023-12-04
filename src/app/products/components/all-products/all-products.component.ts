@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllProductsComponent implements OnInit {
   products: iProduct[] = [];
-  categories: iProduct[] = [];
+  categories: string[] = [];
   constructor(
     private service: ProductsService,
     private sharedService: SharedService
@@ -37,16 +37,43 @@ export class AllProductsComponent implements OnInit {
       }
     );
   }
+  // getCategories() {
+  //   this.service.getCategories().subscribe(
+  //     (result: any) => {
+  //       console.log(result);
+  //       this.categories = result;
+  //     },
+  //     (error) => {
+  //       alert('ERROR!');
+  //     }
+  //   );
+  // }
   getCategories() {
     this.service.getCategories().subscribe(
       (result: any) => {
         console.log(result);
-        this.categories = result;
+  
+        // Ensure that the result is an array before mapping
+        if (Array.isArray(result)) {
+          // Extract category names from products, handling undefined values
+          this.categories = result.map((product: iProduct) => product?.category || 'Uncategorized');
+        } else {
+          console.error('Invalid response format for categories');
+        }
       },
       (error) => {
         alert('ERROR!');
       }
     );
   }
-  filterCategory($event: any) {}
+  filterCategory(selectedCategory: string) {
+  if (selectedCategory === 'all') {
+    // If 'All' is selected, show all products
+    this.sharedService.setAllProducts(this.products);
+  } else {
+    // Filter products based on the selected category
+    const filteredProducts = this.products.filter(product => product.category === selectedCategory);
+    this.sharedService.setAllProducts(filteredProducts);
+  }
+}
 }

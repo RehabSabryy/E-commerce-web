@@ -8,10 +8,11 @@
       <mat-icon>view_module</mat-icon>
       <mat-icon>view_comfy</mat-icon></span
     >
-    <mat-menu (change)="filterCategory($event)" #menu="matMenu">
-      <button value="all" mat-menu-item>All</button>
+    <!-- <mat-menu (change)="filterCategory('all')" #menu="matMenu"> -->
+      <mat-menu #menu="matMenu">
+      <button value="all" mat-menu-item (click)="filterCategory('all')">All</button>
 
-      <button *ngFor="let category of categories" mat-menu-item>
+      <button *ngFor="let category of categories" (click)="filterCategory('all')" mat-menu-item>
         {{ category }}
       </button>
     </mat-menu>
@@ -24,6 +25,5 @@
     </div>
   </div>
   <div class="text-center w-100">
-    <!-- <app-spinner></app-spinner> -->
   </div>
 </div>

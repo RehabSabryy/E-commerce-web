@@ -24,12 +24,25 @@ export class CartComponent {
     this.productsToCart = JSON.parse(localStorage.getItem('productsToCart')!);
     this.productsToCart.forEach((product) => {
       this.subtotal += product.price;
+      this.calculateSubtotal();
     });
   }
-  incrementItemCount(amount: number) {
-    this.itemCount = this.itemCount + amount;
+  calculateSubtotal() {
+    this.subtotal = this.productsToCart.reduce(
+      (total, product) => total + product.price * (product.quantity || 1),
+      0
+    );
   }
-  decrementItemCount(amount: number) {
-    this.itemCount = this.itemCount - amount;
+
+  incrementItemCount(product: iProduct, amount: number) {
+    product.quantity = (product.quantity || 0) + amount;
+    this.calculateSubtotal();
   }
+
+  decrementItemCount(product: iProduct, amount: number) {
+    if (product.quantity && product.quantity > 0) {
+      product.quantity -= amount;
+      this.calculateSubtotal();
+    }
+}
 }

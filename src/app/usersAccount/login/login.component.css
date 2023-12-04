@@ -1,6 +1,5 @@
 .form {
   border-radius: 5px;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   padding: 50px 50px;
   display: flex;
   justify-content: center;
@@ -10,7 +9,7 @@ form {
   height: 400px;
 }
 .form :hover {
-  box-shadow: 0 0 20px rgba(33, 33, 33, 0.2);
+  box-shadow: 0 0 10px rgba(33, 33, 33, 0.2);
 }
 .title {
   font-size: 2em;
@@ -35,4 +34,10 @@ button:hover {
 }
 a {
   color: #064e40;
+}
+.loginValidation {
+  align-self: flex-start;
+  margin-left: 195px;
+  margin-bottom: 10px;
+  color: red;
 }

@@ -1,23 +1,30 @@
 import { Component } from '@angular/core';
 import {
   FormBuilder,
-  FormControl,
-  FormGroup,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
+
 export class LoginComponent {
   submitted = false;
+  isLoggedin = false;
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, , Validators.email]],
+    password: ['', [Validators.required , Validators.minLength(6)]],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {
+    const userData = JSON.parse(localStorage.getItem('userData')!);
+    if (userData) {
+      this.isLoggedin = true; // Set login flag
+    }
+  }
   //Add user form actions
   get f() {
     return this.loginForm.controls;
@@ -28,5 +35,18 @@ export class LoginComponent {
     if (this.loginForm.invalid) {
       return;
     }
+    const userData = {
+      email: this.loginForm.value.email,
+      password: this.loginForm.value.password,
+    };
+    localStorage.setItem('userData', JSON.stringify(userData)!);
+  
+    // Update login status and navbar
+    this.isLoggedin = true;
   }
+ goToHome(){
+  const userData = JSON.parse(localStorage.getItem('userData')!);
+  if (userData) {
+    this.router.navigateByUrl('/products');
+  } }
 }

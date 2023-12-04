@@ -28,24 +28,65 @@
       placeholder="Email"
       class="form-control"
     />
+    <span
+    class="signupValidation"
+    *ngIf="signUpForm.controls['email'].touched &&  signUpForm.controls['email'].errors?.['required']"
+    >*Email is required!</span
+  >
+  <span
+    class="signupValidation"
+    *ngIf="signUpForm.controls['email'].errors?.['pattern']"
+  >
+    *Enter in the format:name&#64;example.com
+  </span>
 
     <label for="password">Password</label>
     <input
       id="password"
-      type="text"
+      type="password"
       formControlName="password"
       placeholder="Password"
       class="form-control"
     />
-
+    <span
+    class="signupValidation"
+    *ngIf="signUpForm.controls['password'].touched && signUpForm.controls['password'].errors?.['required']"
+    >*Password is required!</span
+  >
+  <span
+    class="signupValidation"
+    *ngIf="signUpForm.controls['password'].errors?.['minlength']"
+    >*Password must be minimum 8 characters</span
+  >
+  <span
+    class="signupValidation"
+    *ngIf="signUpForm.controls['password'].errors?.['passwordStrength']"
+  >
+    *Your password must have lower case, upper case and numeric
+    characters and symbols.
+  </span>
     <label for="reEnterPassword"> Re-enter Password</label>
     <input
       id="password2"
-      type="text"
+      type="password"
       formControlName="reEnterPassword"
       placeholder="Please re-enter your password :)"
       class="form-control"
     />
+    <span
+    class="signupValidation"
+    *ngIf="signUpForm.controls['reEnterPassword']?.touched && signUpForm.controls['reEnterPassword'].errors?.['required']"
+    >*Confirm Password is required!</span
+  >
+  <span
+    class="signupValidation d-flex"
+    *ngIf="
+      signUpForm.controls['reEnterPassword']?.invalid &&
+      signUpForm.controls['reEnterPassword']?.touched
+    "
+  >
+    *Confirm password must match password
+  </span>
     <div formGroupName="address">
       <h2>Address</h2>
 
@@ -77,7 +118,7 @@
       <label for="zip">Zip Code: </label>
       <input id="zip" type="text" formControlName="zip" class="form-control" />
     </div>
-    <button
+    <button  (click)="goToHome()"
       type="submit"
       class="btn btn-primary"
       [disabled]="!signUpForm.valid"
