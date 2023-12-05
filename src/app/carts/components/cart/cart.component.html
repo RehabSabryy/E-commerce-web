@@ -60,7 +60,7 @@
                 <td class="align-middle border-bottom-0">
                   <p class="mb-0" style="font-weight: 500">
                     <!-- ------------ -->
-                    {{ (productToCart?.price || 0) * (productToCart?.quantity || 1) }}
+                    {{ ((productToCart?.price || 0) * (productToCart?.quantity || 1)) .toFixed(2)}}
                   </p>
                 </td>
               </tr>
@@ -219,14 +219,14 @@
                   class="d-flex justify-content-between mb-4"
                   style="font-weight: 500"
                 >
-                  <p class="mb-2">Total (tax included)</p>
-                  <p class="mb-2">{{ +subtotal.toFixed(2) + + shipping }}</p>
+                  <p class="mb-2">Total (tax included) </p>
+                  <p class="mb-2">{{subtotal.toFixed(2) + shipping }}</p>
                 </div>
 
                 <button type="button" class="btn btn-primary btn-block btn-lg">
                   <div class="d-flex justify-content-between">
-                    <span>Checkout</span>
-                    <span>{{ +subtotal.toFixed(2) + +shipping }}</span>
+                    <span>Checkout </span>
+                    <span>{{subtotal.toFixed(2) +shipping}}</span>
                   </div>
                 </button>
               </div>
