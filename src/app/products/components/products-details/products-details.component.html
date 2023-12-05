@@ -1,12 +1,12 @@
 <div class="each-product d-flex justify-content-center">
-  <img src="{{ product?.image }}" />
+  <img src="{{ product.image }}" />
   <div class="text">
-    <h1>{{ product?.title }}</h1>
-    <h4>{{ product?.category }}</h4>
-    <p>{{ product?.description }}</p>
-    <p>Rate:{{ product?.rating?.rate }}</p>
+    <h1>{{ product.title }}</h1>
+    <h4>{{ product.category }}</h4>
+    <p>{{ product.description }}</p>
+    <p>Rate:{{ product.rating?.rate }}</p>
 
-    <p class="price">Price: {{ product?.price }}</p>
+    <p class="price">Price: {{ product.price }}</p>
 
     <button type="button" class="btn btn-primary" (click)="addToCart()">
       Add To Cart
