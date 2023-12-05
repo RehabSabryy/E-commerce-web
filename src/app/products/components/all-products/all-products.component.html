@@ -12,7 +12,7 @@
       <mat-menu #menu="matMenu">
       <button value="all" mat-menu-item (click)="filterCategory('all')">All</button>
 
-      <button *ngFor="let category of categories" (click)="filterCategory('all')" mat-menu-item>
+      <button *ngFor="let category of categories" (click)="filterCategory(category)" mat-menu-item>
         {{ category }}
       </button>
     </mat-menu>

@@ -25,9 +25,8 @@ export class AllProductsComponent implements OnInit {
     this.service.getAllProducts().subscribe(
       (res: any) => {
         console.log(res);
-
-        this.products = res;
-        this.sharedService.setAllProducts(this.products);
+        this.sharedService.setAllProducts(res);
+        this.products = this.sharedService.getAllProducts();
       },
       //error handling ...lw l api etghyr
       (error) => {
@@ -37,17 +36,7 @@ export class AllProductsComponent implements OnInit {
       }
     );
   }
-  // getCategories() {
-  //   this.service.getCategories().subscribe(
-  //     (result: any) => {
-  //       console.log(result);
-  //       this.categories = result;
-  //     },
-  //     (error) => {
-  //       alert('ERROR!');
-  //     }
-  //   );
-  // }
+
   getCategories() {
     this.service.getCategories().subscribe(
       (result: any) => {
@@ -60,15 +49,17 @@ export class AllProductsComponent implements OnInit {
     );
   }
   filterCategory(selectedCategory: string) {
+    this.products = this.sharedService.getAllProducts();
     if (selectedCategory === 'all') {
       // If 'All' is selected, show all products
-      this.sharedService.setAllProducts(this.products);
+      return;
     } else {
       // Filter products based on the selected category
       const filteredProducts = this.products.filter(
         (product) => product.category === selectedCategory
       );
-      this.sharedService.setAllProducts(filteredProducts);
+      this.sharedService.setFilteredProducts(filteredProducts);
+      this.products = this.sharedService.getFilteredProducts();
     }
   }
 }
