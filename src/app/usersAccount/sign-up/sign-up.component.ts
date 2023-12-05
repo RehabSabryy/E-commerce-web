@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class SignUpComponent {
   submitted = false;
-  isSignedUp = false;
+  isAuthorized = false;
   signUpForm = this.fb.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
@@ -42,10 +42,11 @@ export class SignUpComponent {
     // Save user data to local storage
     localStorage.setItem('userData', JSON.stringify(userData));
     if (userData) {
-      this.isSignedUp = true; // Set login flag
+      this.isAuthorized = true; // Set login flag
     }
     // Reset the form
     this.signUpForm.reset();
+    this.goToHome()
   }
   goToHome(){
     const userData = JSON.parse(localStorage.getItem('userData')!);

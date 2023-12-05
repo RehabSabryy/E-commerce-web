@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 
 export class LoginComponent {
   submitted = false;
-  isLoggedin = false;
+  isAuthorized = false;
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required , Validators.minLength(6)]],
@@ -22,7 +22,7 @@ export class LoginComponent {
   constructor(private fb: FormBuilder, private router: Router) {
     const userData = JSON.parse(localStorage.getItem('userData')!);
     if (userData) {
-      this.isLoggedin = true; // Set login flag
+      this.isAuthorized = true; // Set login flag
     }
   }
   //Add user form actions
@@ -42,7 +42,8 @@ export class LoginComponent {
     localStorage.setItem('userData', JSON.stringify(userData)!);
   
     // Update login status and navbar
-    this.isLoggedin = true;
+    this.isAuthorized = true;
+    this.goToHome()
   }
  goToHome(){
   const userData = JSON.parse(localStorage.getItem('userData')!);

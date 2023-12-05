@@ -13,12 +13,12 @@
       <mat-icon class="icon">shopping_cart</mat-icon> My Cart
     </button>
   
-    <button class="auth" >
-    <button mat-button class="login-button" *ngIf="!isLoggedIn" (click)="login()">Login</button>
-  <button mat-button class="signup-button" *ngIf="!isSignedUp" (click)="signUp()">SignUp</button>
-  <button mat-button class="signup-button" *ngIf="isSignedUp && isLoggedIn" (click)="logout()">Logout</button>
+    <!-- <button class="auth" > -->
+    <button mat-button class="login-button" *ngIf="!isAuthorized" (click)="login()">Login</button>
+  <button mat-button class="signup-button" *ngIf="!isAuthorized" (click)="signUp()">SignUp</button>
+  <button mat-button class="signup-button" *ngIf="isAuthorized" (click)="logout()">Logout</button>
 
-</button>
+<!-- </button> -->
   </mat-toolbar>
   
 </div>
