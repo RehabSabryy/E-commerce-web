@@ -52,14 +52,7 @@ export class AllProductsComponent implements OnInit {
     this.service.getCategories().subscribe(
       (result: any) => {
         console.log(result);
-  
-        // Ensure that the result is an array before mapping
-        if (Array.isArray(result)) {
-          // Extract category names from products, handling undefined values
-          this.categories = result.map((product: iProduct) => product?.category || 'Uncategorized');
-        } else {
-          console.error('Invalid response format for categories');
-        }
+        this.categories = result;
       },
       (error) => {
         alert('ERROR!');
@@ -67,13 +60,15 @@ export class AllProductsComponent implements OnInit {
     );
   }
   filterCategory(selectedCategory: string) {
-  if (selectedCategory === 'all') {
-    // If 'All' is selected, show all products
-    this.sharedService.setAllProducts(this.products);
-  } else {
-    // Filter products based on the selected category
-    const filteredProducts = this.products.filter(product => product.category === selectedCategory);
-    this.sharedService.setAllProducts(filteredProducts);
+    if (selectedCategory === 'all') {
+      // If 'All' is selected, show all products
+      this.sharedService.setAllProducts(this.products);
+    } else {
+      // Filter products based on the selected category
+      const filteredProducts = this.products.filter(
+        (product) => product.category === selectedCategory
+      );
+      this.sharedService.setAllProducts(filteredProducts);
+    }
   }
-}
 }
