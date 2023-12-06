@@ -1,7 +1,6 @@
-<nav
-  class="navbar navbar-expand-lg d-flex flex-wrap"
-  *ngIf="currentRoute !== '/notFound' && '/login' && '/contact'"
->
+
+<nav class="navbar navbar-expand-lg d-flex flex-wrap" *ngIf="currentRoute !== '/notFound' && currentRoute !== '/login' && currentRoute !== '/contact'">
+
   <div
     class="collapse navbar-collapse justify-content-center"
     id="navbarSupportedContent"
@@ -23,4 +22,4 @@
   </div>
 </nav>
 
-<img src="assets/banner.jpg" *ngIf="currentRoute === '/products'" />
+<img src="assets/banner.jpg" *ngIf="currentRoute === '/products'  async" />

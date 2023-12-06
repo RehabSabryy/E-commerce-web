@@ -6,7 +6,7 @@
 }
 form {
   width: 600px;
-  height: 800px;
+  
 }
 .form :hover {
   box-shadow: 0 0 10px rgba(33, 33, 33, 0.2);
@@ -30,7 +30,7 @@ form {
 
   background-color: sandybrown;
 }
-btn-primary:hover {
+btn-primary:hover,btn-primary:active {
   background-color: #064e40;
 }
 a {
@@ -41,4 +41,8 @@ a {
   color: red;
   padding-bottom: 10px;
   text-align-last: start;
+}
+p{
+  margin-top: 10px;
+  text-align: center;
 }

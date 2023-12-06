@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatBadgeModule } from '@angular/material/badge';
+import { RouterModule } from '@angular/router';
 
 import {
   NgbPaginationModule,
@@ -30,6 +31,7 @@ import { ContactComponent } from '../contact/contact/contact.component';
     NgbAlertModule,
     MatToolbarModule,
     MatBadgeModule,
+    RouterModule 
     
   ],
   declarations: [

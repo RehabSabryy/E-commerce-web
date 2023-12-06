@@ -16,10 +16,10 @@
         <small id="emailHelp" class="form-text text-muted"
           >We'll never share your email with anyone else.</small
         >
-        <span
+        <div
         class="loginValidation"
         *ngIf="loginForm.controls['email'].touched &&  loginForm.controls['email'].errors?.['required']"
-        >*Email is required!</span
+        >*Email is required!</div
       >
       </div>
 
@@ -51,7 +51,7 @@
       </div>
 
       <div class="d-grid">
-        <button  (click)="goToHome()"
+        <button  
           class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2"
           type="submit"
         >
@@ -59,6 +59,7 @@
         </button>
         <div class="text-center">
           <a class="small" href="#">Forgot password?</a>
+          <p>Don't have account? <a href="/signup">Sign Up</a></p>
         </div>
       </div>
     </div>

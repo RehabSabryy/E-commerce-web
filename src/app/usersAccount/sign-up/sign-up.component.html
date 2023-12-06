@@ -11,6 +11,11 @@
       placeholder="Enter your first name"
       class="form-control"
     />
+    <span
+    class="signupValidation"
+    *ngIf="signUpForm.controls['firstName'].touched &&  signUpForm.controls['firstName'].errors?.['required']"
+    >*Please enter your First Name</span
+  >
     <label for="LastName">Last Name</label>
     <input
       id="lastName"
@@ -19,7 +24,11 @@
       formControlName="lastName"
       class="form-control"
     />
-
+    <span
+    class="signupValidation"
+    *ngIf="signUpForm.controls['lastName'].touched &&  signUpForm.controls['lastName'].errors?.['required']"
+    >*Please enter your last Name</span
+  >
     <label for="email"> e-mail:</label>
     <input
       id="email"
@@ -118,12 +127,14 @@
       <label for="zip">Zip Code: </label>
       <input id="zip" type="text" formControlName="zip" class="form-control" />
     </div>
-    <button  (click)="goToHome()"
+    <button 
       type="submit"
       class="btn btn-primary"
       [disabled]="!signUpForm.valid"
     >
       Submit
     </button>
+    <p>Already have Account?<a href="/login">Log In</a></p>
+
   </form>
 </div>

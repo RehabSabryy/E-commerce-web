@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class SharedService {
   private allProducts: iProduct[] = [];
+  private filteredProducts: iProduct[] = [];
+
   private productsToCart: iProduct[] = [];
   private categories: string[] = [];
 
@@ -18,6 +20,12 @@ export class SharedService {
   }
   public setAllProducts(arr: iProduct[]) {
     this.allProducts = arr;
+  }
+  public getFilteredProducts() {
+    return this.filteredProducts;
+  }
+  public setFilteredProducts(arr: iProduct[]) {
+    this.filteredProducts = arr;
   }
   public getCategories() {
     return this.categories;

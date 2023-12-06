@@ -1,5 +1,5 @@
 import { NavigationEnd, Router } from '@angular/router';
-import { Component } from '@angular/core';
+import { Component,DoCheck } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,8 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  isLoggedIn: boolean = false;
-  isSignedUp :boolean = false;
+  isAuthorized: boolean = false;
   currentRoute!: string;
   constructor(private router: Router) {
     
@@ -19,27 +18,28 @@ export class HeaderComponent {
       }
     });
   }
-  ngOnInit(): void {
+  DoCheck(): void {
     // Check if user data exists in local storage on page load
     const userData = JSON.parse(localStorage.getItem('userData')!);
     if (userData) {
-      this.isLoggedIn = true;
-      this.isSignedUp=true; 
+      this.isAuthorized = true;
+      
     }
   }
   login() {
-    if(this.isLoggedIn = true){
+    if(this.isAuthorized = true){
     this.router.navigate(['/login']);
-    }
+  }
   }
   signUp() {
-    if(this.isSignedUp = true){
+    if(this.isAuthorized = true){
     this.router.navigate(['/signup']);
     }
-  }
-  logout(){
+    }
+  
+  logout() {
     localStorage.removeItem('userData');
-    this.isLoggedIn = false;
+    this.isAuthorized = false;
     
 
   }

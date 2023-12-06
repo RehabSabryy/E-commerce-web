@@ -1,3 +1,4 @@
+{{ categories | json }}
 
 <footer class="site-footer" *ngIf="currentRoute !== '/notFoundPage'">
   <div class="container">
@@ -26,6 +27,11 @@
             <a href="">women's clothing</a>
           </li>
         </ul>
+        <!-- <ul class="footer-links">
+          <li *ngFor="let category of categories">
+            <a href="/products/{{category}}">{{category}}</a>
+          </li>
+        </ul> -->
       </div>
 
       <div class="col-xs-6 col-md-3">
@@ -52,13 +58,13 @@
       <div class="col-md-4 col-sm-6 col-xs-12">
         <ul class="social-icons">
           <li>
-            <a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+            <a class="facebook" href="#"><i class="fa-brands fa-facebook"></i></a>
           </li>
           <li>
-            <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+            <a class="twitter" href="#"><i class="fa-brands fa-twitter"></i></a>
           </li>
           <li>
-            <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+            <a class="linkedin" href="#"><i class="fa-brands fa-linkedin"></i></a>
           </li>
         </ul>
       </div>

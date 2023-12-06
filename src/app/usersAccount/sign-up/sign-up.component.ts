@@ -46,6 +46,8 @@ export class SignUpComponent {
     }
     // Reset the form
     this.signUpForm.reset();
+    this.goToHome();
+
   }
   goToHome(){
     const userData = JSON.parse(localStorage.getItem('userData')!);
