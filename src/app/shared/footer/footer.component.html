@@ -1,4 +1,3 @@
-{{ categories | json }}
 
 <footer class="site-footer" *ngIf="currentRoute !== '/notFoundPage'">
   <div class="container">
@@ -16,22 +15,11 @@
       <div class="col-xs-6 col-md-3">
         <h6>Categories</h6>
         <ul class="footer-links">
-          <li><a href="">electronics</a></li>
-          <li>
-            <a href="">jewelery</a>
-          </li>
-          <li>
-            <a href="">men's clothing</a>
-          </li>
-          <li>
-            <a href="">women's clothing</a>
+          <li >
+            <a  class="categories" *ngFor="let category of categories" (click)="filterCategory(category)" mat-menu-item>
+              {{ category }}</a>
           </li>
         </ul>
-        <!-- <ul class="footer-links">
-          <li *ngFor="let category of categories">
-            <a href="/products/{{category}}">{{category}}</a>
-          </li>
-        </ul> -->
       </div>
 
       <div class="col-xs-6 col-md-3">

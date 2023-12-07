@@ -136,3 +136,8 @@
     font-weight: 600;
   }
 }
+.categories{
+  display: flex;
+  flex-direction: column;
+
+}
